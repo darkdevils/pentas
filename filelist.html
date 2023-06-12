@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>파일리스트</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        body {overflow: hidden}
+        .blind {display: none;}
+        .fileList {display: flex;height: 100vh;}
+        .fileList__left {width: 180px;padding: 10px;}
+        .fileList__left .title {font-size: 16px;line-height: 16px;margin: 0 0 10px;}
+        .fileList ol li {list-style: none;margin-bottom: 10px;}
+        .fileList__left > ol > li > a,.fileList__left  > ol > li > span {text-decoration: none;color: #333;font-size: 14px;font-weight:700;}
+        .fileList__left > ol > li > ol {padding: 0 0 0 15px;margin: 10px 0 0;}
+        .fileList__left > ol > li > ol li {margin-bottom: 5px}
+        .fileList__left > ol > li > ol li a {text-decoration: none;color: #333;font-size: 14px;font-weight:700;}
+        .fileList__content {position: relative;padding: 0;width: calc(100vw - 180px);}
+        .fileList__content:after {content: "";position: absolute;left: 0;top: 0;width: 1px;height: 100%;background-color: #ccc;}
+    </style>
+</head>
+<body>
+<h1 class="blind">파일리스트</h1>
+<div class="fileList">
+    <div class="fileList__left">
+        <h2 class="title">[펜타에스] 공기</h2>
+        <ol>
+            <li><a href="javascript:void(0)" data-link="./guide/guide.html">1. Guide</a></li>
+            <li><span>2. 파일리스트</span>
+                <ol class="list">
+                    <li><a href="javascript:void(0)" data-link="./html/index.html">메인(스크립트 수정이 필요)</a></li>
+                    <li><a href="javascript:void(0)" data-link="./html/sub01.html">피스상세(작업진행중)</a></li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <div class="fileList__content">
+        <iframe src="./html/index.html" frameborder="0" style="width: 100%;height: 100%; overflow: hidden"></iframe>
+    </div>
+</div>
+<script src="js/lib/jquery-3.7.0.min.js"></script>
+<script>
+    $(function(){
+        //$(".fileList__content").load('index.html');
+        $('ol li a').on('click',function() {
+            let link = $(this).data('link');
+            $('.fileList__content iframe').attr('src', link);
+            //$('html').animate({scrollLeft: 160}, 300);
+            return false;
+        });
+        $('.list li').each(function(index) {
+            $(this).prepend('<span>'+ (index + 1 )+ ') </span>');
+        })
+
+    });
+</script>
+</body>
+</html>
+

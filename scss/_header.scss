@@ -1,0 +1,51 @@
+/* Main Header */
+#header {
+  display: flex;
+  height: 60px;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: space-between;
+  .btn_prev {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    @include bgImage(0,50%,btn_prev,svg) {
+      width: 28px;
+      height: 28px;
+      margin-top: -14px;
+    }
+  }
+  .right_area {
+    .btn_message {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      @include bgImage(0,50%,message,svg) {
+        width: 28px;
+        height: 28px;
+        margin-top: -14px;
+      };
+    }
+    .btn_total_menu {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      margin-left: 10px;
+      @include bgImage(0,50%,allmenu,svg) {
+        width: 28px;
+        height: 28px;
+        margin-top: -14px;
+      };
+    }
+    .btn_home {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      @include bgImage(0,50%,btn_home,svg) {
+        width: 28px;
+        height: 28px;
+        margin-top: -14px;
+      };
+    }
+  }
+}

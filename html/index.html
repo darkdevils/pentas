@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>메인</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header" class="main_header">
+        <h1 class="logo"><img src="../images/logo.svg" alt="gonggi"></h1>
+        <div class="right_area">
+            <button type="button" class="btn_message"><span class="blind">message</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="main_content">
+            <section class="note_list">
+                <h2 class="blind">노트리스트</h2>
+                <div class="note_add_wrap">
+                    <div class="note_add on">
+                        <button type="button" class="layer_open" aria-controls="slide_layer01"><span class="text">추가</span></button>
+                    </div>
+                    <div class="tooltip">+버튼을 눌러서 공기알을 추가해 보세요</div>
+                    <!-- 추가 버튼 클릭시 탭 추가 -->
+                    <div class="note_tab_wrap">
+                        <ul>
+                            <li><a href="#"><span class="img"><img src="../images/orange_gonggi01.svg" alt="주황공기1"></span><span class="title">OOTD</span></a></li>
+                            <li><a href="#"><span class="img"><img src="../images/blue_gonggi02.svg" alt="파란공기2"></span><span class="title">일기</span></a></li>
+                            <li><a href="#"><span class="img"><img src="../images/yellow_gonggi03.svg" alt="노란공기3"></span><span class="title">러닝크루</span></a></li>
+                            <li><a href="#"><span class="img"><img src="../images/pink_gonggi04.svg" alt="분홍공기4"></span><span class="title">알콩달콩</span></a></li>
+                            <li><a href="#"><span class="img"><img src="../images/green_gonggi05.svg" alt="녹색공기5"></span><span class="title">Test</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- //추가 버튼 클릭시 탭 추가 -->
+                </div>
+                <!-- 노트리스트 -->
+                <div class="note_wrap">
+                    <div class="note_wrap__content">
+                        <!-- 노트가 없을 경우 -->
+                        <div class="no_note">
+                            <p>아직 등록된 노트가 없어요<br>공기알을 추가하고 노트를 적어보세요</p>
+                        </div>
+                        <!-- //노트가 없을 경우 -->
+                        <!-- 노트가 있을 경우 -->
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide__image">
+                                        <img src="../images/temp/thumb01.jpg" alt="패션이미지">
+                                        <span class="category">패션</span>
+                                        <button type="button" class="favorites">피스를 <strong>즐겨찾기</strong> 했어요.</button>
+                                    </div>
+                                    <div class="note_info">
+                                        <div class="justifyWrap">
+                                            <strong>데일리 출근룩</strong>
+                                            <button type="button" class="btn_private"><span class="blind">공개/비공개</span></button>
+                                        </div>
+                                        <p class="text">월, 화, 수, 목, 금 데일리 출근룩 기록.<br>패션이란 이런거야 알아들었으면 끄덕여</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="swiper-slide__image">
+                                        <img src="../images/temp/thumb02.jpg" alt="패션이미지">
+                                        <span class="category">패션</span>
+                                    </div>
+                                    <div class="note_info">
+                                        <div class="justifyWrap">
+                                            <strong>Today Styling</strong>
+                                            <button type="button" class="btn_subscribe"><span class="blind">구독/구독중</span></button>
+                                        </div>
+                                        <p class="text">ep.54 모두가 기다렸던 시리즈로 돌아왔습니다.<br>오늘도 스타일링.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //노트가 있을 경우 -->
+                    </div>
+                </div>
+                <!-- //노트리스트 -->
+            </section>
+
+            <!-- 배너 -->
+            <div class="banner_wrap">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#"><img src="../images/banner1.jpg" alt="공기가 처음이세요? 공기 이용가이드 살펴보러 GO!"></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="../images/temp/banner2.jpg" alt="공기가 처음이세요? 공기 이용가이드 살펴보러 GO!"></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="../images/temp/banner3.jpg" alt="공기가 처음이세요? 공기 이용가이드 살펴보러 GO!"></a></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- //배너 -->
+
+            <section class="piece_wrap">
+                <div class="title_wrap">
+                    <h2 class="title">불타는 급상승 인기 피스 🔥</h2>
+                    <a href="#" class="btn_more">더보기</a>
+                </div>
+                <div class="piece_wrap__list">
+                    <ul>
+                        <li class="item active"><a href="#"><span class="text_img">👏🏻</span><span class="text">추천</span></a></li>
+                        <li class="item"><a href="#"><span class="text_img">🥘</span><span class="text">맛집</span></a></li>
+                        <li class="item"><a href="#"><span class="text_img">🐶</span><span class="text">반려동물</span></a></li>
+                        <li class="item"><a href="#"><span class="text_img">🤑</span><span class="text">앱테크</span></a></li>
+                        <li class="item"><a href="#"><span class="text_img">☕</span><span class="text">카페</span></a></li>
+                    </ul>
+                </div>
+                <div class="piece_item">
+                    <div class="piece_item__image">
+                        <img src="../images/temp/thumb03.jpg" alt="카페">
+                        <span class="category">카페</span>
+                        <button type="button" class="like"><strong>1,953명</strong>이 공기했어요.</button>
+                    </div>
+                    <div class="piece_item__content">
+                        <div class="comment_area">
+                            <div class="comment_box">
+                                <span class="comment_thumb"><img src="../images/temp/thumb07.jpg" alt="프로필 사진"></span>
+                                <div class="comment_nick">
+                                    <strong>쏭슐랭</strong>
+                                    <span class="text">고독한미식가</span>
+                                </div>
+                            </div>
+                            <div class="comment_text">전국 알짜배기 찐카페😆정보<br>팔로우 하고 전국핫플 정보 받아가세요</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="piece_item">
+                    <div class="piece_item__image">
+                        <img src="../images/temp/thumb04.jpg" alt="웨딩">
+                        <span class="category">웨딩</span>
+                        <button type="button" class="like"><strong>1,953명</strong>이 공기했어요.</button>
+                    </div>
+                    <div class="piece_item__content">
+                        <div class="comment_area">
+                            <div class="comment_box">
+                                <span class="comment_thumb"><img src="../images/temp/thumb08.jpg" alt="프로필 사진"></span>
+                                <div class="comment_nick">
+                                    <strong>예담커플</strong>
+                                    <span class="text">웨딩기록</span>
+                                </div>
+                            </div>
+                            <div class="comment_text">하나하나 모두 진짜 셀프였던 웨딩. 셀프웨딩에 진심이었던<br>예담커플의 웨딩기록. 오랫만에 연재하는 시리즈!</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 광고 -->
+            <div class="advertisement">
+                <a href="#"><img src="../images/temp/ad.jpg" alt="광고"></a>
+            </div>
+            <!-- //광고 -->
+        </div>
+    </div>
+
+    <!-- 하단 고정 메뉴 -->
+    <div class="bottom_fixed">
+        <button type="button" class="btn_piece_add on"><span class="blind">추가</span></button>
+        <div class="bottom_fixed__menu">
+            <a href="#" class="menu_home active"><span>홈</span></a>
+            <a href="#" class="menu_gonggi"><span>공기알</span></a>
+            <span class=""></span>
+            <a href="#" class="menu_piece"><span>피스</span></a>
+            <a href="#" class="menu_my"><span>MY</span></a>
+        </div>
+    </div>
+    <!-- //하단 고정 메뉴 -->
+</div>
+
+<!-- 공기알 추가 레이어 팝업 -->
+<div class="layer_popup_wrap slide_layer" id="slide_layer01">
+    <div class="layer_popup_header">
+        <h2 class="title">공기알 추가</h2>
+        <button type="button" class="layer_popup_close"><span class="blind">닫기</span></button>
+    </div>
+    <div class="layer_popup_body">
+        <!-- 주황색 공기알 -->
+        <div id="color1" class="color_swiper on">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/orange_gonggi01.svg" alt="주황공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi02.svg" alt="주황공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi03.svg" alt="주황공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi04.svg" alt="주황공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi05.svg" alt="주황공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //주황색 공기알 -->
+        <!-- 파란색 공기알 -->
+        <div id="color2" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/blue_gonggi01.svg" alt="파란공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi02.svg" alt="파란공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi03.svg" alt="파란공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi04.svg" alt="파란공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi05.svg" alt="파란공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //파란색 공기알 -->
+        <!-- 노란색 공기알 -->
+        <div id="color3" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi01.svg" alt="노란공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi02.svg" alt="노란공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi03.svg" alt="노란공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi04.svg" alt="노란공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi05.svg" alt="노란공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //노란색 공기알 -->
+        <!-- 분홍색 공기알 -->
+        <div id="color4" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/pink_gonggi01.svg" alt="분홍공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi02.svg" alt="분홍공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi03.svg" alt="분홍공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi04.svg" alt="분홍공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi05.svg" alt="분홍공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //분홍색 공기알 -->
+        <!-- 녹색 공기알 -->
+        <div id="color5" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/green_gonggi01.svg" alt="녹색공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi02.svg" alt="녹색공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi03.svg" alt="녹색공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi04.svg" alt="녹색공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi05.svg" alt="녹색공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //녹색 공기알 -->
+        <form action="">
+            <div class="gonggi_color_select">
+                <div class="radio_item"><input type="radio" name="option" id="orange" onclick="showColor('color1');" checked><label for="orange"><span class="blind">주황색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="blue" onclick="showColor('color2')"><label for="blue"><span class="blind">파란색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="yellow" onclick="showColor('color3')"><label for="yellow"><span class="blind">노란색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="pink" onclick="showColor('color4')"><label for="pink"><span class="blind">분홍색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="green" onclick="showColor('color5')"><label for="green"><span class="blind">녹색</span></label></div>
+            </div>
+        </form>
+        <div class="input_wrap gonggi_name">
+            <input type="text" name="" id="review" maxlength="5" placeholder="공기알 이름을 입력해주세요">
+            <button type="button" class="text_close"><span class="blind">텍스트 삭제</span></button>
+            <div class="font_size">
+                <span class="current">0</span>/<span class="total">5</span>
+            </div>
+        </div>
+    </div>
+    <div class="layer_popup_button">
+        <button type="button" class="btn"><span>확인</span></button>
+    </div>
+</div>
+<!-- //공기알 추가 레이어 팝업 -->
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+
+    // 공기알 추가 레이어팝업에서의 공기알 선택하는 스크립트
+    $("input[type=radio]:checked").parent().addClass('on');
+    function showColor(contentId) {
+        var contents = document.getElementsByClassName("color_swiper");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = "none";
+        }
+        if($("input[type=radio]:checked").is(":checked")) {
+            $("input[type=radio]").parent().removeClass('on');
+            $("input[type=radio]:checked").parent().addClass('on');
+        }
+        document.getElementById(contentId).style.display = "block";
+    }
+
+$(function() {
+
+    //$('.note_tab_wrap').hide();
+    $(".note_tab_wrap li").on("click",function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tooltip').hide();
+        $('.note_add.on').removeClass('on');
+    });
+    $('.note_add button').on("click",function() {
+        $(this).parent().addClass('on');
+        $(".note_tab_wrap li").removeClass('active');
+    });
+
+    // Note Swiper
+    var swiper = new Swiper(".note_wrap .swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+    });
+
+    // 공개,비공개,구독,구독중 버튼 클릭시 class 변경
+    $('.note_info button').on('click',function() {
+        $(this).toggleClass('on');
+    });
+
+    //배너 Swiper
+    var swiper2 = new Swiper(".banner_wrap .swiper", {
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+    });
+
+    //불타는 급상스 인기 피스 리스트
+    $('.piece_wrap__list li').on('click',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        return false;
+    });
+
+    //하단 고정 메뉴 클릭
+    $(".bottom_fixed__menu a").on('click',function(){
+       $(this).addClass('active').siblings().removeClass('active');
+       return false;
+    });
+
+    // 주황 공기알 Swiper
+    var swiperGonggi1 = new Swiper("#color1 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        observer: true
+    });
+
+    // 파란 공기알 Swiper
+    var swiperGonggi2 = new Swiper("#color2 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        observer: true
+    });
+    // 노란 공기알 Swiper
+    var swiperGonggi3 = new Swiper("#color3 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        observer: true
+    });
+    // 분홍 공기알 Swiper
+    var swiperGonggi2 = new Swiper("#color4 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        observer: true
+    });
+    // 녹색 공기알 Swiper
+    var swiperGonggi2 = new Swiper("#color5 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        observer: true
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>메인</title>
+    <style>
+        .color_swiper {display: none;}
+    </style>
+</head>
+<body>
+
+<!-- 공기알 추가 레이어 팝업 -->
+<div class="layer_popup_wrap">
+    <div class="layer_popup_header">
+        <h2 class="title">공기알 추가</h2>
+        <button type="button" class="layer_popup_close"><span class="blind">닫기</span></button>
+    </div>
+    <div class="layer_popup_body">
+        <!-- 주황색 공기알 -->
+        <div id="color1" class="color_swiper on">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/orange_gonggi01.svg" alt="주황공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi02.svg" alt="주황공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi03.svg" alt="주황공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi04.svg" alt="주황공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/orange_gonggi05.svg" alt="주황공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //주황색 공기알 -->
+        <!-- 파란색 공기알 -->
+        <div id="color2" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/blue_gonggi01.svg" alt="파란공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi02.svg" alt="파란공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi03.svg" alt="파란공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi04.svg" alt="파란공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/blue_gonggi05.svg" alt="파란공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //파란색 공기알 -->
+        <!-- 노란색 공기알 -->
+        <div id="color3" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi01.svg" alt="노란공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi02.svg" alt="노란공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi03.svg" alt="노란공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi04.svg" alt="노란공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/yellow_gonggi05.svg" alt="노란공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //노란색 공기알 -->
+        <!-- 분홍색 공기알 -->
+        <div id="color4" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/pink_gonggi01.svg" alt="분홍공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi02.svg" alt="분홍공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi03.svg" alt="분홍공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi04.svg" alt="분홍공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/pink_gonggi05.svg" alt="분홍공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //분홍색 공기알 -->
+        <!-- 녹색 공기알 -->
+        <div id="color5" class="color_swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../images/green_gonggi01.svg" alt="녹색공기알1"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi02.svg" alt="녹색공기알2"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi03.svg" alt="녹색공기알3"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi04.svg" alt="녹색공기알4"></div>
+                    <div class="swiper-slide"><img src="../images/green_gonggi05.svg" alt="녹색공기알5"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- //녹색 공기알 -->
+        <form action="">
+            <div class="gonggi_color_select">
+                <div class="radio_item"><input type="radio" name="option" id="orange" onclick="showColor('color1');" checked><label for="orange"><span class="blind">주황색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="blue" onclick="showColor('color2')"><label for="blue"><span class="blind">파란색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="yellow" onclick="showColor('color3')"><label for="yellow"><span class="blind">노란색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="pink" onclick="showColor('color4')"><label for="pink"><span class="blind">분홍색</span></label></div>
+                <div class="radio_item"><input type="radio" name="option" id="green" onclick="showColor('color5')"><label for="green"><span class="blind">녹색</span></label></div>
+            </div>
+        </form>
+        <div class="input_wrap gongi_name">
+            <input type="text" name="" id="" maxlength="5" placeholder="공기알 이름을 입력해주세요">
+            <div class="font_size">
+                <span class="current">0</span>/<span class="total">5</span>
+            </div>
+        </div>
+    </div>
+    <div class="layer_popup_button">
+        <button type="button" class="btn"><span>확인</span></button>
+    </div>
+</div>
+<!-- //공기알 추가 레이어 팝업 -->
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script>
+
+$("input[type=radio]:checked").parent().addClass('on');
+function showColor(contentId) {
+    var contents = document.getElementsByClassName("color_swiper");
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+    }
+    if($("input[type=radio]:checked").is(":checked")) {
+        $("input[type=radio]").parent().removeClass('on');
+        $("input[type=radio]:checked").parent().addClass('on');
+    }
+    document.getElementById(contentId).style.display = "block";
+}
+
+$(function() {
+    /*var Swipers = [];
+    $(".color_swiper").each(function(i){
+        var thisID = $(this).attr('id');
+        //const $this = $(this);
+        Swipers[i] = new Swiper('#'+ thisID, {
+            loop: true,
+        });
+    });*/
+
+    // 주황 공기알 Swiper
+    var swiperGonggi1 = new Swiper("#color1 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // 파란 공기알 Swiper
+    var swiperGonggi2 = new Swiper("#color2 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    // 노란 공기알 Swiper
+    var swiperGonggi3 = new Swiper("#color3 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    // 분홍 공기알 Swiper
+    var swiperGonggi2 = new Swiper("#color4 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    // 녹색 공기알 Swiper
+    var swiperGonggi2 = new Swiper("#color5 .swiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});
+</script>
+</body>
+</html>

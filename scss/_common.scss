@@ -1,0 +1,556 @@
+
+* {margin: 0;padding: 0;}
+
+/* margin,padding */
+@for $i from 0 to 25 {
+  .mgTop#{$i * 5}{
+    margin-top: $i * 5px !important;
+  }
+  .mgLeft#{$i * 5}{
+    margin-left: $i * 5px !important;
+  }
+  .mgRight#{$i * 5}{
+    margin-right: $i * 5px !important;
+  }
+  .mgBottom#{$i * 5}{
+    margin-bottom: $i * 5px !important;
+  }
+  .mgTop16 {
+    margin-top: 16px !important;
+  }
+  .mgBottom16 {
+    margin-bottom: 16px !important;
+  }
+
+  .padTop#{$i * 5}{
+    padding-top: $i * 5px !important;
+  }
+  .padLeft#{$i * 5}{
+    padding-left: $i * 5px !important;
+  }
+  .padRight#{$i * 5}{
+    padding-right: $i * 5px !important;
+  }
+  .padBottom#{$i * 5}{
+    padding-bottom: $i * 5px !important;
+  }
+}
+.mgLeft8 {
+  margin-left: 8px !important;
+}
+.mgLeft16 {
+  margin-left: 16px !important;
+}
+
+.fontRoboto {
+  font-family: "Roboto", sans-serif;
+  line-height: 26px;
+  color: var(--brownishGrey-color) !important;
+}
+
+/* Width,Height */
+@for $i from 10 to 50 {
+  .w#{$i * 5} {
+    width: $i * 5px !important;
+  }
+}
+
+@for $i from 1 to 40 {
+  .w#{$i * 50} {
+    width: $i * 50px !important;
+  }
+}
+@for $i from 1 to 20 {
+  .h#{$i * 10} {
+    height: $i * 10px !important;
+  }
+}
+.w100p {
+  width: 100% !important;
+}
+.w330 {
+  width: 330px !important;
+}
+
+.justifyWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightArea {
+  text-align: right;
+}
+
+::placeholder {
+  color: #bbb;
+}
+
+/***** 하단 고정 메뉴 *****/
+.bottom_fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 95px;
+  background-color: #fff;
+  border-top: 1px solid #E7E9EE;
+  z-index: 5;
+  .btn_piece_add {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    width: 50px;
+    height: 50px;
+    margin: 0 0 0 -25px;
+    border-radius: 50px;
+    @include imageUrl(btn_add,svg);
+    box-shadow: 0px 7px 12px rgba(251, 89, 16, 0.3);
+    z-index: 1;
+    &.on {
+      @include imageUrl(btn_add_on,svg);
+    }
+  }
+  .bottom_fixed__menu {
+    display: flex;
+    justify-content: space-between;
+    height: 95px;
+    padding: 0 10px;
+    .left_area,.right_area {
+      display: flex;
+    }
+    > a,> span {
+      position: relative;
+      display: block;
+      width: 71px;
+      height: 96px;
+      padding: 40px 0 0;
+      text-align: center;
+      span {
+        font-size: 12px;
+        color: #999;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 16px;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+      }
+      &.menu_home:after {
+        @include imageUrl(menu_home_off,svg);
+      }
+      &.menu_gonggi:after {
+        @include imageUrl(menu_gonggi_off,svg);
+      }
+      &.menu_piece:after {
+        @include imageUrl(menu_piece_off,svg);
+      }
+      &.menu_my:after {
+        @include imageUrl(menu_my_off,svg);
+      }
+      &.active {
+        span {
+          color: #FB5910;
+          font-weight: 500;
+        }
+        &.menu_home:after {
+          @include imageUrl(menu_home_on,svg);
+        }
+        &.menu_gonggi:after {
+          @include imageUrl(menu_gonggi_on,svg);
+        }
+        &.menu_piece:after {
+          @include imageUrl(menu_piece_on,svg);
+        }
+        &.menu_my:after {
+          @include imageUrl(menu_my_on,svg);
+        }
+      }
+    }
+
+  }
+}
+
+/***** Button *****/
+.btn_wrap {
+  padding: 30px 0;
+  .btn {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    &.gray {
+      background-color: #F2F3F5;
+      border-color: #F2F3F5;
+    }
+    span {
+      font-size: 13px;
+    }
+  }
+  &.col2 {
+    display: flex;
+    justify-content: space-between;
+    .btn {
+      flex: 1;
+      + .btn {
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+.btn_detail_add {
+  button {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    text-align: center;
+    span {
+      position: relative;
+      padding: 0 19px 0 0;
+      color: #fff;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 3px;
+        width: 18px;
+        height: 18px;
+        @include imageUrl(plus_20x20,svg);
+        background-size: 100%;
+      }
+    }
+  }
+}
+.btn_bookmark {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  @include bgImage(0,0,btn_bookmark_off,svg) {
+    width: 32px;
+    height: 32px;
+  }
+}
+.btn_like {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  @include bgImage(0,0,btn_like_off,svg) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.layer_popup_button {
+  display: flex;
+  margin-top: 30px;
+  .btn {
+    width: 100%;
+    height: 56px;
+    border-radius: 10px;
+    background: #BFBFBF;
+    span {
+      color: #fff;
+    }
+  }
+}
+
+/***** Tool Tip *****/
+.tooltip {
+  position: absolute;
+  bottom: -5px;
+  left: 24px;
+  display: inline-block;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 32px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, rgba(251,89,16,1) 0%, rgba(255,203,50,1) 100%);
+  font-size: 12px;
+  color: var(--white-color);
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 24px;
+    top: -7px;
+    @include imageUrl(bg_top_arrow,svg);
+    border-radius: 2px;
+    z-index: -1;
+
+  }
+}
+
+/***** Select Type *****/
+
+/***** Paging *****/
+.paging {
+  text-align: center;
+  a,strong {
+    position: relative;
+    display: inline-block;
+    margin-left: -3px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    font-family: Roboto,sans-serif;
+    color: var(--brownishGrey-color);
+  }
+  strong {
+    color: var(--primary-color);
+    font-weight: 500;
+    &:after {
+      content:"";
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      width: 10px;
+      height: 1px;
+      margin-left: -4px;
+      background-color: var(--primary-color);
+    }
+  }
+  .btnFirst,.btnPrev,.btnNext,.btnlast {
+    @include imageUrl(common_sprite,png);
+    background-position: -160px 0;
+  }
+  .btnFirst {
+    background-position: -210px 0;
+    transform: rotate(-180deg);
+    &.hidden {
+      background-position: -310px 0;
+      transform: rotate(0deg);
+    }
+  }
+  .btnPrev {
+    transform: rotate(-180deg);
+    &.hidden {
+      background-position: -260px 0;
+      transform: rotate(0deg);
+    }
+  }
+  .btnlast {
+    background-position: -210px 0;
+    &.hidden {
+      background-position: -310px 0;
+      transform: rotate(-180deg);
+    }
+  }
+
+  .btnPrev {
+    margin-left: 4px;
+    margin-right: 16px;
+  }
+  .btnNext {
+    margin-left: 16px;
+    margin-right: 4px;
+    &.hidden {
+      background-position: -260px 0;
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+/***** Layer Popup *****/
+.layerPopup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--white-color);
+  z-index: 101;
+  .layerHeader {
+    position: relative;
+    padding: 30px 30px 0 30px;
+    h2.title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      color: var(--black-color);
+    }
+    .bntLayerClose {
+      position: absolute;
+      right: 30px;
+      top: 34px;
+      width: 20px;
+      height: 20px;
+      @include imageUrl(common_sprite,png);
+      background-position: -126px 0;
+      transition: 0.5s ease;
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .layerContent {
+    padding: 40px 30px 30px;
+    .mobileArea {
+      margin-bottom: 30px;
+      .mobileArea__text {
+        margin-bottom: 30px;
+        padding: 24px 0;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        text-align: center;
+        .num {
+          color: var(--primary-color);
+        }
+        .text {
+          color: var(--font-color);
+        }
+      }
+    }
+
+    /* 임시 비밀번호 변경확인 방법 */
+    .changePwText {
+      padding: 30px 0;
+      color: var(--brownishGrey-color);
+      text-align: center;
+    }
+    .pwChangeBox {
+      padding: 10px 0 30px;
+    }
+
+    /* 비밀번호 변경 완료 */
+    .pwChangeCom {
+      color: var(--brownishGrey-color);
+      text-align: center;
+      padding: 30px 0;
+    }
+    .title_wrap {
+      margin: 40px 0 16px;
+      h4 {
+        font-size: 20px;
+        line-height: 28px;
+        color: var(--black-color);
+        font-weight: 500;
+      }
+    }
+
+    .reschedule_wrap {
+      padding: 40px 0 0;
+    }
+
+ }
+  &.layer400 {
+    width: 400px;
+    margin: 0 0 0 -200px;
+  }
+  &.layerBig {
+    width: 1340px;
+    height: 845px;
+    .layerContent {
+      height: 790px;
+    }
+  }
+  &.layerBig2 {
+    width: 1340px;
+    height: 880px;
+    .layerContent {
+      height: 790px;
+    }
+  }
+  &.layerAuto {
+    width: 1340px;
+    height: auto;
+  }
+}
+
+/* layerpop Background */
+.dim {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-60);
+  z-index: 100;
+}
+
+/* Tab Type */
+.tabWrap {
+  .tabType {
+    display: flex;
+
+    li {
+      position: relative;
+      background-color: #f5f5f5;
+      border-top: 1px solid $Grey200;
+      border-bottom: 1px solid $Grey200;
+      a {
+        display: block;
+        width: 154px;
+        height: 56px;
+        line-height: 56px;
+        color: var(--brownishGrey-color);
+        text-align: center;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18px;
+        width: 1px;
+        height: 20px;
+        background-color: #ccc;
+      }
+      &.on {
+        position: relative;
+        border-left: 1px solid $Grey200;
+        border-bottom: 1px solid #fff;
+        background-color: var(--white-color);
+        z-index: 2;
+        &:after {
+          display: none;
+        }
+        a {
+          color: var(--primary-color);
+        }
+        + li {
+          border-left: 1px solid $Grey200;
+          &:after {
+            display: none;
+          }
+        }
+      }
+      &:first-child {
+        border-left: 1px solid $Grey200;
+        &:after {
+          display: none;
+        }
+      }
+      &:last-child {
+        border-right: 1px solid $Grey200;
+      }
+    }
+  }
+}
+
+/* Dim 화면 */
+.dim {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 99;
+}
+
+/* Bg Line */
+.bg_line {
+  height: 10px;
+  margin: 0;
+  background-color: #EFF0F3;
+  border: 0;
+}
