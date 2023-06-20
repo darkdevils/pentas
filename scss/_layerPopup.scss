@@ -103,6 +103,35 @@
       }
     }
   }
+  .keyword_wrap_scroll {
+    min-height: calc(240px - 84px);
+    max-height: calc(640px - 84px);
+    overflow: auto;
+    ul {
+      li {
+        position: relative;
+        line-height: 24px;
+        color: #C2C2C1;
+        text-align: center;
+        margin: 24px 0;
+        &.on {
+          color: #FB5910;
+          &:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            @include imageUrl(check,svg);
+          }
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
   .piece_admin {
     padding: 0 0 26px;
     button {

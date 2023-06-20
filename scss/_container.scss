@@ -1155,11 +1155,11 @@
     line-height: 22px;
   }
   .date_input {
-    padding: 0 50px 0 16px;
+
     input {
       outline: none;
     }
-    button {
+    > button {
       position: absolute;
       right: 16px;
       top: 12px;

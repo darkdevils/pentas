@@ -4141,13 +4141,10 @@ button.swiper-pagination-bullet {
   color: #000;
   line-height: 22px;
 }
-.add_content .date_input {
-  padding: 0 50px 0 16px;
-}
 .add_content .date_input input {
   outline: none;
 }
-.add_content .date_input button {
+.add_content .date_input > button {
   position: absolute;
   right: 16px;
   top: 12px;
@@ -5364,6 +5361,33 @@ button.swiper-pagination-bullet {
   background: url("../images/check.svg") no-repeat;
 }
 .layer_popup_wrap .year_wrap_scroll ul li:first-child {
+  margin-top: 0;
+}
+.layer_popup_wrap .keyword_wrap_scroll {
+  min-height: 156px;
+  max-height: 556px;
+  overflow: auto;
+}
+.layer_popup_wrap .keyword_wrap_scroll ul li {
+  position: relative;
+  line-height: 24px;
+  color: #C2C2C1;
+  text-align: center;
+  margin: 24px 0;
+}
+.layer_popup_wrap .keyword_wrap_scroll ul li.on {
+  color: #FB5910;
+}
+.layer_popup_wrap .keyword_wrap_scroll ul li.on:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: url("../images/check.svg") no-repeat;
+}
+.layer_popup_wrap .keyword_wrap_scroll ul li:first-child {
   margin-top: 0;
 }
 .layer_popup_wrap .piece_admin {
