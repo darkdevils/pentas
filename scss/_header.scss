@@ -1,10 +1,14 @@
 /* Main Header */
 #header {
+  position: fixed;
   display: flex;
+  width: 100%;
   height: 60px;
   padding: 0 24px;
   align-items: center;
   justify-content: space-between;
+  z-index: 10;
+  background-color: #fff;
   .btn_prev {
     position: relative;
     width: 28px;
@@ -15,37 +19,47 @@
       margin-top: -14px;
     }
   }
-  .right_area {
-    .btn_message {
-      position: relative;
+  .title {
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+  }
+}
+
+.right_area {
+  .btn_message {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    @include bgImage(0,50%,message,svg) {
       width: 28px;
       height: 28px;
-      @include bgImage(0,50%,message,svg) {
-        width: 28px;
-        height: 28px;
-        margin-top: -14px;
-      };
-    }
-    .btn_total_menu {
-      position: relative;
+      margin-top: -14px;
+    };
+  }
+  .btn_total_menu {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-left: 10px;
+    @include bgImage(0,50%,allmenu,svg) {
       width: 28px;
       height: 28px;
-      margin-left: 10px;
-      @include bgImage(0,50%,allmenu,svg) {
-        width: 28px;
-        height: 28px;
-        margin-top: -14px;
-      };
-    }
-    .btn_home {
-      position: relative;
+      margin-top: -14px;
+    };
+  }
+  .btn_home {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    @include bgImage(0,50%,btn_home,svg) {
       width: 28px;
       height: 28px;
-      @include bgImage(0,50%,btn_home,svg) {
-        width: 28px;
-        height: 28px;
-        margin-top: -14px;
-      };
-    }
+      margin-top: -14px;
+    };
   }
 }

@@ -71,6 +71,9 @@
 .w330 {
   width: 330px !important;
 }
+.h200 {
+  height: 200px !important;
+}
 
 .justifyWrap {
   display: flex;
@@ -81,9 +84,10 @@
   text-align: right;
 }
 
-::placeholder {
+::placeholder,textarea::placeholder  {
   color: #bbb;
 }
+
 
 /***** 하단 고정 메뉴 *****/
 .bottom_fixed {
@@ -177,9 +181,14 @@
 .btn_wrap {
   padding: 30px 0;
   .btn {
+    position: relative;
+    width: 100%;
     height: 40px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
     &.gray {
       background-color: #F2F3F5;
       border-color: #F2F3F5;
@@ -187,7 +196,24 @@
     span {
       font-size: 13px;
     }
+    &:disabled {
+      background-color: #DBDBDB;
+    }
+    &.btn--big {
+      height: 56px;
+      background-color: #000000;
+      border-color: #000000;
+      span {
+        font-size: 16px;
+        color: #fff;
+      }
+      &:disabled {
+        background-color: #DBDBDB;
+        border-color: #DBDBDB;
+      }
+    }
   }
+
   &.col2 {
     display: flex;
     justify-content: space-between;
@@ -196,6 +222,24 @@
       + .btn {
         margin-left: 7px;
       }
+    }
+  }
+  &.fixed {
+    position: fixed;
+    left: 24px;
+    bottom: 0;
+    width: calc(100% - 48px);
+    padding: 0 0 34px;
+    z-index: 2;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 0.3) 11.43%, rgba(255, 255, 255, 0.4) 21.43%, #FFFFFF 100%);
+      z-index: 0;
     }
   }
 }
@@ -247,14 +291,46 @@
   display: flex;
   margin-top: 30px;
   .btn {
+    display: flex;
     width: 100%;
     height: 56px;
     border-radius: 10px;
     background: #BFBFBF;
+    justify-content: center;
+    align-items: center;
     span {
       color: #fff;
     }
+    &.black {
+      background-color: #000;
+    }
+    &:disabled {
+      background-color: #DBDBDB;
+    }
   }
+}
+.bottom_button {
+  position: relative;
+  .tooltip--bottom {
+    bottom: 96px;
+    background: linear-gradient(270deg, #fb5910 0%, #ffcb32 100%);
+    &:after {
+      top: initial;
+      bottom: -8px;
+      left: initial;
+      right: 24px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.btn_top {
+  position: fixed;
+  right: 16px;
+  bottom: 96px;
+  width: 42px;
+  height: 42px;
+  @include imageUrl(btn_top,svg);
 }
 
 /***** Tool Tip *****/
@@ -282,6 +358,15 @@
     border-radius: 2px;
     z-index: -1;
 
+  }
+  .tooltip_close {
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+    top: -2px;
+    width: 14px;
+    height: 14px;
+    @include imageUrl(tooltip_close,svg);
   }
 }
 
@@ -463,18 +548,6 @@
   }
 }
 
-/* layerpop Background */
-.dim {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--black-60);
-  z-index: 100;
-}
 
 /* Tab Type */
 .tabWrap {
@@ -544,6 +617,17 @@
   bottom: 0;
   background-color: #000;
   opacity: 0.6;
+  z-index: 99;
+}
+.dim2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
   z-index: 99;
 }
 

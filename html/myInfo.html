@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>내정보</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+        <h1 class="title">내정보</h1>
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="sub_content">
+            <div class="my_info_wrap">
+                <div class="my_info">
+                    <div class="photo_area">
+                        <!-- 랜덤뽑기 하면 기본이미지 변경으로 클래스가 추가 -->
+                        <div class="photo random1"></div>
+                        <button type="button" class="btn_profile"><span class="blind">프로필 설정</span></button>
+                    </div>
+                    <div class="my_info__text">
+                        <span class="my_nickname">엉뚱한배추</span>
+                    </div>
+                </div>
+
+                <div class="random_draw">
+                    <button type="button">
+                        <strong>기본 이미지 랜덤 뽑기!</strong>
+                        <span>우측 공기알을 눌러 뽑아보세요 👉🏻</span>
+                    </button>
+                </div>
+                <form action="">
+                    <div class="item_area mgTop40">
+                        <span class="title">닉네임</span>
+                        <div class="input_wrap input_button">
+                            <div class="input_inner">
+                                <input type="text" name="" id="" placeholder="닉네임을 입력해 주세요.">
+                                <button type="button" class="btn_delete"><span class="blind">삭제</span></button>
+                            </div>
+                            <button type="button" class="btn_duplication">중복확인</button>
+                        </div>
+                        <div class="message">닉네임은 2~6자로 입력해 주세요.</div>
+                    </div>
+                    <div class="item_area mgTop40 error">
+                        <span class="title">이메일</span>
+                        <div class="input_wrap">
+                            <div class="input_inner">
+                                <input type="text" name="" id="" placeholder="이메일을 입력해 주세요.">
+                                <button type="button" class="btn_delete"><span class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                        <div class="error_message">이메일 주소를 다시 확인해주세요</div>
+                    </div>
+                    <div class="item_area mgTop40">
+                        <span class="title">소설 로그인 설정</span>
+                        <ul class="sns_list">
+                            <li class="kakao">
+                                <span>pentas@daum.net</span>
+                                <button type="button">연결해제</button>
+                            </li>
+                            <li class="naver">
+                                <span>pentas@naver.com</span>
+                                <button type="button" class="on">연결하기</button>
+                            </li>
+                            <li class="googel">
+                                <span>pentas@gmail.com</span>
+                                <button type="button">연결해제</button>
+                            </li>
+                            <li class="apple">
+                                <span>pentas@apple.com</span>
+                                <button type="button">연결해제</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="btn btn--big" disabled><span>수정하기</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+$(function() {
+    $('.button_switch .checkbox').on('click',function(){
+        if($(this).is(':checked')) {
+            $('.button_switch').addClass('on');
+        } else {
+            $('.button_switch').removeClass('on');
+        }
+    })
+});
+</script>
+</body>
+</html>

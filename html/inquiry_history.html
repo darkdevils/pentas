@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>1:1문의 상담내역</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+        <h1 class="title">1:1문의</h1>
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="sub_content">
+            <div class="inquiry_wrap">
+                <div class="view_area">
+                    <div class="title_area">
+                        <span class="complete">답변대기</span>
+                        <strong class="title">[공지] 공기 정기 점검 시간 안내</strong>
+                        <span class="date">2023-06-18 11:0 <span>접속오류</span></span>
+                    </div>
+                    <div class="view_area__content">
+                        안녕하세요, 공기를 애용하는 사용자입니다.<br><br>
+                        얼마 전부터 공기 어플에 접속하면 계속 튕기던데..
+                        이거 접속 오류인가요? 도대체 왜 오류 나는 건가요?<br><br>
+                        해결 좀 해주시면 감사하겠습니다.
+                    </div>
+                </div>
+                <div class="agent_answer">
+                    <strong>상담원 답변</strong>
+                    안녕하세요, 모*람 고객님!<br>
+                    공기 운영자 김도형입니다.<br><br>
+                    저희 공기를 이용해 주셔서 감사합니다.<br>
+                    접속 오류가 있으셨군요! 많이 당황하셨겠어요.<br>
+                    원활한 해결을 드리기 위해서는 고객님 접속 오류 화면이 필요합니다. 괜찮으시다면 오류 화면 캡쳐 뒤 이미지 첨부하여 다시 접수 가능하실까요?<br><br>
+                    더 궁금한 사항이 있으시면 언제라도 1:1문의 주시기 바랍니다.<br><br>
+                    감사합니다 :)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    common.tabType("#tab",0);
+
+    $(function(){
+        $('.selected_value').on('click',function(e){
+            $(this).parent().toggleClass('active');
+            $(this).closest('.item_area').siblings().find('.select_wrap').removeClass('active');
+        });
+
+        $(".option_list li").on('click',function() {
+            let text = $(this).html();
+            $(this).addClass('on').siblings().removeClass('on');
+            const selectValue = $(this).closest('.select_wrap').find('.selected_value');
+            selectValue.text(text);
+            $(this).closest('.select_wrap').addClass('on').removeClass('active');
+        });
+
+        $(document).on('click', function(e) {
+            const $clicked = $(e.target);
+            if (!$clicked.parents().hasClass('select_wrap')){
+                $('.select_wrap').removeClass('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>

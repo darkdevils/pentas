@@ -5,6 +5,9 @@ const common = {
     init: function() {
         //this.lnbList();
         this.slideLayer.slideType();
+        this.inputFocus();
+        this.inputClear();
+        //this.slideLayer.layerCover();
        // this.fixedHeader();
         //this.dropdown();
         //this.textareaDisabled();
@@ -38,6 +41,41 @@ const common = {
         });
     },
 
+    // Input Focus
+    inputFocus: function() {
+        $('input[type="text"]').focus(function(){
+            $(this).parent().addClass('focus');
+        }).blur(function(){
+            $(this).parent().removeClass('focus');
+        });
+    },
+    inputClear: function() {
+        const $ipt = $('.input_inner input[type="text"]');
+        const $pw = $('.input_inner input[type="password"]');
+        const $clearInt = $('.btn_delete');
+
+        $ipt.keyup(function(){
+            $(this).closest('.input_inner').find('.btn_delete').toggle(Boolean($(this).val()));
+        });
+        $clearInt.toggle(Boolean($ipt.val()));
+        $clearInt.on('click',function(){
+            $(this).parent().find($ipt).val('').focus();
+            $(this).hide();
+        });
+        $pw.keyup(function() {
+            if($(this).val().length > 0) {
+                $(this).parent().addClass('active');
+            } else {
+                $(this).parent().removeClass('active');
+            }
+
+        })
+        // $('input[type="password"]').focus(function(){
+        //     $(this).parent().addClass('focus');
+        // }).blur(function(){
+        //     $(this).parent().removeClass('focus');
+        // });
+    },
     // Slide Layer
     slideLayer: {
         slideOpen: function(el) {
@@ -58,7 +96,6 @@ const common = {
         },
         slideType: function() {
             $('.layer_open').on('click',function(){
-                console.log('111');
                 const _this = $(this);
                 const layerPopup = $("#" + $(this).attr("aria-controls"));
                 const layerObjClose = layerPopup.find(".layer_popup_close");
@@ -69,10 +106,8 @@ const common = {
 
                 // Slide Popup 시 내용이 길어서 Scroll 생성 및 Title Line 생성
                 const slideheaderH = layerPopup.find('.layer_popup_header').outerHeight();
-                console.log(slideheaderH, "slideheaderH")
                 const slideH = layerPopup.outerHeight() - slideheaderH;
-                //const layerScrollTop = $('.slideLayerScroll').scrollTop();
-               // layerPopup.find(".slideLayerScroll").outerHeight(slideH - 70);
+                layerPopup.css({"transform":"translate(0, 0)"});
                 $('body').css({overflow : 'hidden' });
 
                 /*$('.slideLayerScroll').scroll(function(){
@@ -114,9 +149,70 @@ const common = {
                         layerClose();
                     }
                 });
-            })
-        }
+            });
+
+            $('.layer_cover').on('click',function(){
+                const _this = $(this);
+                const layerPopup = $("#" + $(this).attr("aria-controls"));
+                const layerObjClose = layerPopup.find(".layer_popup_close");
+                const layerObj = layerPopup.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
+                let tabDisable;
+
+                // Slide Popup 시 내용이 길어서 Scroll 생성 및 Title Line 생성
+                const slideheaderH = layerPopup.find('.layer_popup_header').outerHeight();
+                const slideH = layerPopup.outerHeight() - slideheaderH;
+                layerPopup.css({"transform":"translate(0, 0)"});
+                $('body').append('<div class="dim2"></div>');
+                layerPopup.animate({
+                    bottom: 0
+                });
+                function layerClose() {
+                    const layerH = layerPopup.height();
+                    $('.dim2').fadeOut().queue(function(){
+                        $('.dim2').remove();
+                    });
+                    layerPopup.animate({
+                        bottom: -layerH
+                    });
+                    if (tabDisable === true) layerPopup.attr("tabindex", "-1");
+                    _this.focus();
+                    $(document).off("keydown.lp_keydown");
+
+                }
+
+                layerObjClose.on("click", layerClose);
+                $('.all_cancel').on("click",function(){
+                    $('.slide_layer').each(function(){
+                        let allHeight = $(this).height();
+                        $(this).animate({
+                            bottom: -allHeight
+                        });
+                    })
+                    $('.dim,.dim2').fadeOut().queue(function(){
+                        $('.dim').remove();
+                        $('.dim2').remove();
+                    });
+
+                    if (tabDisable === true) layerPopup.attr("tabindex", "-1");
+                    _this.focus();
+                    $(document).off("keydown.lp_keydown");
+                    $('body').css({overflow : 'auto' });
+                });
+            });
+        },
     },
+    alertLayer: function(el) {
+        const layerId = $("#" + el );
+        $('body').append('<div class="dim"></div>');
+        layerId.show();
+    },
+    alertClose: function(el) {
+        const layerId = $("#" + el );
+        layerId.hide();
+        $('.dim').fadeOut().queue(function(){
+            $('.dim').remove();
+        });
+    }
 }
 
 

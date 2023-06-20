@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>상세피스_댓글</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+        <h1 class="title">공지사항</h1>
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="sub_content">
+            <div class="comment_notice">욕설, 비방 등 상대방을 불쾌하게 하는 댓글은 신고와 함께 이용이 제한될 수 있어요.</div>
+            <div class="comment_wrap">
+                <div class="no_text">첫 댓글을 남겨보세요.</div>
+            </div>
+            <div class="comment_regist">
+                <div class="comment_thumb"><img src="../images/temp/thumb06.jpg" alt="이미지1"></div>
+                <div class="comment_box">
+                    <textarea name="" id="textarea" cols="" rows="" placeholder="댓글남기기"></textarea>
+                </div>
+                <button type="button" class="btn_register" disabled>등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+$(function() {
+    $(".comment_box textarea").on('keydown keyup', function () {
+        $(this).height(1).height( $(this).prop('scrollHeight')+12 );
+        /*if($(this).height() >= 122) {
+            $(this).height(122);
+        }
+        if($(this).height() >= 56 && $(this).height() <= 77 ) {
+            $('.comment_box').css({
+                top: 16 + "px"
+            });
+        } else if($(this).height() >= 78) {
+            $('.comment_box').css({
+                top: 0 + "px"
+            });
+        } else {
+            $('.comment_box').css({
+                top: 26 + "px"
+            });
+        }*/
+    });
+});
+</script>
+</body>
+</html>

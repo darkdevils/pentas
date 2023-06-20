@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>전체메뉴</title>
+</head>
+<body>
+<div class="total_menu">
+    <div class="total_menu__header">
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div class="total_menu__body">
+        <div class="my_info">
+            <div class="photo_area">
+                <div class="photo"><img src="../images/temp/thumb09.jpg" alt=""></div>
+                <button type="button" class="btn_profile"><span class="blind">프로필 설정</span></button>
+            </div>
+            <div class="my_info__text">
+                <a href="#">로그인 후 이용해주세요</a>
+                <span class="my_nickname">엉뚱한배추</span>
+                <div class="text">최근접속 2023.06.12 10:45:33 <button type="button" class="btn_logout" onclick="common.alertLayer('layer1')">로그아웃</button></div>
+            </div>
+        </div>
+
+        <div class="menu_list">
+            <h2 class="title">내기억</h2>
+            <div class="menu_list__item memory"><a href="#none"><span>공기알&amp;피스 관리</span></a></div>
+
+
+            <h2 class="title">마이페이지</h2>
+            <div class="menu_list__item mypage_info"><a href="#none"><span>내 정보</span></a></div>
+            <div class="menu_list__item mypage_pw"><a href="#none"><span>비밀번호 변경</span></a></div>
+            <div class="menu_list__item mypage_admin"><a href="#none"><span>구독자 차단 관리</span></a></div>
+
+            <h2 class="title">고객센터</h2>
+            <div class="menu_list__item customer_notice">
+                <a href="#none"><span>공지사항</span></a>
+                <span class="new">NEW</span>
+            </div>
+            <div class="menu_list__item customer_inquiry"><a href="#none"><span>1:1문의</span></a></div>
+            <div class="menu_list__item customer_service"><a href="#none"><span>서비스 이용약관</span></a></div>
+
+            <h2 class="title">앱설정</h2>
+            <div class="menu_list__item app_login">
+                <span class="text">자동로그인</span>
+                <div class="button_switch">
+                    <input type="checkbox" class="checkbox">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="menu_list__item app_version">
+                <span class="text">버전정조</span>
+                <span >최신 버전(v1.0.2)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 로그아웃 레이어팝업 -->
+<div class="layer_popup_wrap alert_layer" id="layer1">
+    <div class="layer_popup_alert">
+        <p class="text">정말 로그아웃 하시겠습니까?</p>
+        <div class="layer_popup_button btn_col2">
+            <button type="button" class="btn all_cancel" onclick="common.alertClose('layer1')"><span>취소</span></button>
+            <button type="button" class="btn" onclick="common.alertClose('layer1')"><span>확인</span></button>
+        </div>
+    </div>
+</div>
+<!-- //로그아웃 레이어팝업 -->
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+$(function() {
+    $('.button_switch .checkbox').on('click',function(){
+        if($(this).is(':checked')) {
+            $('.button_switch').addClass('on');
+        } else {
+            $('.button_switch').removeClass('on');
+        }
+    })
+});
+</script>
+</body>
+</html>
