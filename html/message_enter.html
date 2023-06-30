@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>메세지 대화상세</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+        <h1 class="title">메세지</h1>
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="sub_content">
+            <div class="message_wrap">
+                <div class="chat_data">2023년 02월 19일</div>
+                <div class="chat_another">
+                    <div class="chat_profile">
+                        <div class="profile_box">
+                            <div class="thumb"><img src="../images/temp/thumb08.jpg" alt="이미지"></div>
+                        </div>
+                        <div class="name">판타에스</div>
+                    </div>
+                    <div class="chat_contents">
+                        <div class="talk_box"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque facilis nobis sed tempore. Dolorum eaque eveniet harum incidunt maxime non officia rerum saepe velit. Accusamus iste maiores perferendis quis?</span></div>
+                    </div>
+                </div>
+
+                <div class="chat_mine">
+                    <div class="chat_contents">
+                        <div class="talk_box"><span>안녕하세요</span></div>
+                    </div>
+                </div>
+
+                <div class="chat_another">
+                    <div class="chat_profile">
+                        <div class="profile_box">
+                            <div class="thumb"><img src="../images/temp/thumb08.jpg" alt="이미지"></div>
+                        </div>
+                        <div class="name">판타에스</div>
+                    </div>
+                    <div class="chat_contents">
+                        <div class="talk_box"><span>test?</span></div>
+                    </div>
+                </div>
+
+                <div class="chat_mine">
+                    <div class="chat_contents">
+                        <div class="talk_box"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae dolorum incidunt, iure labore nihil nulla quos rerum sint tempora totam vel, veniam? Culpa, ducimus ipsa numquam placeat saepe tempora?</span></div>
+                    </div>
+                </div>
+
+                <div class="chat_enter">
+                    <div class="chat_thumb"><img src="../images/temp/thumb08.jpg" alt="이미지1"></div>
+                    <div class="enter_body">
+                        <textarea name="" id="textarea" cols="" rows="" placeholder="메시지보내기"></textarea>
+                    </div>
+                    <button type="button" class="btn_register" disabled>전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/lib/autosize.js"></script>
+<script src="../js/common.js"></script>
+<script>
+$(function() {
+    $('textarea').each(function(){
+        autosize(this);
+    }).on('autosize:resized', function(){
+        console.log($(this).height());
+        if( $(this).height() >= 22 && $(this).height() < 44) {
+            $(this).css({"bottom": "0"})
+        } else if($(this).height() >= 44 && $(this).height() < 66) {
+            $(this).css({"bottom": "8px"});
+            $('.chat_enter').css({"height": "92px"});
+        } else if($(this).height() >= 66 && $(this).height() < 88) {
+            $(this).css({"bottom": "8px"});
+            $('.chat_enter').css({"height": "118px"});
+        } else if($(this).height() >= 88) {
+            $(this).css({"bottom": "11px","height":"88px"})
+            $('.chat_enter').css({"height": "118px"});
+        }
+    });
+});
+</script>
+</body>
+</html>

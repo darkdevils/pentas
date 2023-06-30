@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>로그인</title>
+</head>
+<body>
+<div class="full_popup">
+    <div class="full_popup__header">
+        <h2 class="title">로그인</h2>
+        <button type="button" class="popup_close"><span class="blind">팝업닫기</span></button>
+    </div>
+    <div class="full_popup__body">
+        <form action="">
+            <div class="login_wrap">
+                <div class="input_wrap email_enter">
+                    <div class="input_inner">
+                        <input type="email" name="" id="" placeholder="이메일입력">
+                    </div>
+                    <div class="error_message">존재하지 않는 이메일입니다.</div>
+                </div>
+                <div class="input_wrap pw_enter">
+                    <div class="input_inner">
+                        <input type="password" name="" id="" placeholder="비밀번호 입력">
+                        <button type="button" class="btn_show"><span class="blind">비밀번호 숨기기</span></button>
+                    </div>
+                    <div class="error_message">비밀번호가 맞지 않습니다.</div>
+                </div>
+            </div>
+
+            <div class="login_wrap">
+                <div class="input_wrap email_enter error">
+                    <div class="input_inner">
+                        <input type="email" name="" id="" placeholder="이메일입력">
+                    </div>
+                    <div class="error_message">존재하지 않는 이메일입니다.</div>
+                </div>
+                <div class="input_wrap pw_enter error">
+                    <div class="input_inner">
+                        <input type="password" name="" id="" placeholder="비밀번호 입력">
+                        <button type="button" class="btn_show"><span class="blind">비밀번호 숨기기</span></button>
+                    </div>
+                    <div class="error_message">비밀번호가 맞지 않습니다.</div>
+                </div>
+            </div>
+            <div class="login_more">
+                <div class="auto_login checks">
+                    <input type="checkbox" name="" id="autoLogin"><label for="autoLogin">자동 로그인</label>
+                </div>
+                <div class="find_wrap">
+                    <a href="#">비밀번호 찾기</a>
+                    <a href="#">회원가입</a>
+                </div>
+            </div>
+            <div class="btn_wrap">
+                <button type="button" class="btn btn--big" disabled><span>로그인</span></button>
+                <button type="button" class="btn btn--big"><span>로그인</span></button>
+            </div>
+            <div class="login_sns">
+                <p class="text">SNS 계정으로 로그인하기</p>
+                <div class="sns_list">
+                    <a href="#none" class="sns_kakao" onclick="common.alertLayer('' +'member01')"><span class="blind">카카오</span></a>
+                    <a href="#" class="sns_naver"><span class="blind">네이버</span></a>
+                    <a href="#" class="sns_google"><span class="blind">구글</span></a>
+                    <a href="#" class="sns_apple"><span class="blind">애플</span></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 카카오톡 레이어팝업 -->
+<div class="layer_wrap" id="member01">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <h2 class="title mgBottom0">카카오톡으로 로그인</h2>
+            <button type="button" class="layer_alert_close" onclick="common.alertClose(this);"><span class="blind">레이어닫기</span></button>
+        </div>
+        <div class="btn_wrap">
+            <button type="button" class="btn btn--kakao" onclick="common.alertClose(this);"><span>카카오톡으로 간편 로그인</span></button>
+            <button type="button" class="btn btn--kakao" onclick="common.alertClose(this);"><span>다른 카카오 계정으로 로그인</span></button>
+        </div>
+    </div>
+</div>
+<!-- //카카오톡 레이어팝업 -->
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+$(function(){
+    $('.btn_show').on('click',function() {
+        $(this).toggleClass('show');
+        $(this).prev('input').attr('type', function(index, attr){
+            return attr == 'text' ? "password" : "text";
+        });
+    })
+});
+</script>
+</body>
+</html>

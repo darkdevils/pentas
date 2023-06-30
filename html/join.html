@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>회원가입</title>
+</head>
+<body>
+<div class="full_popup">
+    <div class="full_popup__header">
+        <h2 class="title">회원가입</h2>
+        <button type="button" class="popup_close"><span class="blind">팝업닫기</span></button>
+    </div>
+    <div class="full_popup__body padBottom5">
+        <div class="join_membership">
+            <div class="item_area">
+                <span class="title essential">이메일</span>
+                <div class="input_wrap input_type1">
+                    <div class="input_inner">
+                        <input type="email" name="" id="" placeholder="이메일을 입력해 주세요.">
+                    </div>
+                    <button type="button" class="btn_send">인증요청</button>
+                </div>
+                <div class="input_wrap input_type1">
+                    <div class="input_inner">
+                        <input type="email" name="" id="" placeholder="이메일을 입력해 주세요.">
+                    </div>
+                    <button type="button" class="btn_send black">재전송</button>
+                </div>
+            </div>
+
+            <div class="item_area">
+                <span class="title essential">인증번호</span>
+                <div class="input_wrap input_type2">
+                    <div class="input_inner">
+                        <input type="number" name="" id="" placeholder="6자리를 입력해 주세요.">
+                    </div>
+                    <button type="button" class="btn_send">확인</button>
+                </div>
+            </div>
+
+            <div class="item_area">
+                <span class="title essential">비밀번호</span>
+                <div class="input_wrap">
+                    <div class="input_inner">
+                        <input type="password" name="" id="pw1" placeholder="비밀번호를 입력해 주세요.">
+                        <button type="button" class="btn_show"><span class="blind">비밀번호 숨기기</span></button>
+                    </div>
+                    <div class="input_inner">
+                        <input type="password" name="" id="pw2" placeholder="비밀번호를 다시 입력해 주세요.">
+                        <button type="button" class="btn_show"><span class="blind">비밀번호 숨기기</span></button>
+                    </div>
+                    <div class="error_message">새비밀번호가 서로 일치하지 않습니다. 다시 입력해 주세요.</div>
+                </div>
+                <div class="message">영문/숫자/특수문자를 조합하여 8~20자로 입력해 주세요.</div>
+            </div>
+
+            <div class="item_area">
+                <span class="title essential">닉네임</span>
+                <div class="input_wrap input_type1">
+                    <div class="input_inner">
+                        <input type="email" name="" id="" placeholder="닉네임을 입력해 주세요.">
+                    </div>
+                    <button type="button" class="btn_send">중복확인</button>
+                </div>
+            </div>
+
+            <div class="item_area">
+                <span class="title">성별</span>
+                <div class="input_wrap input_both">
+                    <div class="radio_btn"><input type="radio" name="sex" id="sex1" checked><label for="sex1">남</label></div>
+                    <div class="radio_btn"><input type="radio" name="sex" id="sex2"><label for="sex2">여</label></div>
+                </div>
+            </div>
+
+            <div class="item_area">
+                <span class="title">생년월일</span>
+                <div class="input_wrap">
+                    <div class="input_inner">
+                        <input type="number" name="" id="" placeholder="생년월일을 입력해주세요.">
+                        <button type="button" class="btn_delete" style="display: inline-block;"><span class="blind">삭제</span></button>
+                    </div>
+                </div>
+                <div class="message">8자리 입력 (예. 19801230)</div>
+            </div>
+
+            <div class="agree_wrap">
+                <div class="total_check checks">
+                    <input type="checkbox" name="" id="agree_all"><label for="agree_all">전체동의</label>
+                </div>
+                <div class="check_list">
+                    <div class="item checks checks--type1">
+                        <input type="checkbox" name="" id="agree_01"><label for="agree_01">서비스 이용약관<span class="color_orange">(필수)</span></label>
+                        <a href="#"><span class="blind">약관 전문보기</span></a>
+                    </div>
+                    <div class="item checks checks--type1">
+                        <input type="checkbox" name="" id="agree_02"><label for="agree_02">개인정보 수집 및 이용동의<span>(필수)</span></label>
+                        <a href="#"><span class="blind">약관 전문보기</span></a>
+                    </div>
+                    <div class="item checks checks--type1">
+                        <input type="checkbox" name="" id="agree_03"><label for="agree_03">개인정보 마케팅 활용동의<span class="color_gray">(선택)</span></label>
+                        <a href="#"><span class="blind">약관 전문보기</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <button type="button" class="btn btn--big" disabled><span>회원가입 완료</span></button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+
+<script>
+$(function(){
+    $(document).on('click', function(e) {
+        const $clicked = $(e.target);
+        if (!$clicked.parents().hasClass('select_wrap')){
+            $('.select_wrap').removeClass('active');
+        }
+    });
+
+    $('.btn_show').on('click',function() {
+        $(this).toggleClass('show');
+        $(this).prev('input').attr('type', function(index, attr){
+            return attr == 'text' ? "password" : "text";
+        });
+    });
+
+    $('.input_both input[type="radio"]').on('click',function(){
+        $(this).parent().addClass('active').siblings().removeClass('active');
+    });
+
+    $(document).on("click", "input:checkbox[name=cbox]", function(e) {
+
+        var chks = document.getElementsByName("cbox");
+        var chksChecked = 0;
+
+        for(var i=0; i<chks.length; i++) {
+            var cbox = chks[i];
+
+            if(cbox.checked) {
+                chksChecked++;
+            }
+        }
+
+        if(chks.length == chksChecked){
+            $(".total_check ").prop("checked", true);
+        }else{
+            $(".total_check ").prop("checked",false);
+        }
+
+    });
+});
+</script>
+</body>
+</html>

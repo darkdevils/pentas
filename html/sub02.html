@@ -21,7 +21,46 @@
         <div id="content" class="sub_content">
             <div class="comment_notice">욕설, 비방 등 상대방을 불쾌하게 하는 댓글은 신고와 함께 이용이 제한될 수 있어요.</div>
             <div class="comment_wrap">
-                <div class="no_text">첫 댓글을 남겨보세요.</div>
+                <!--<div class="no_text">첫 댓글을 남겨보세요.</div>-->
+                <div class="comment_item">
+                    <div class="comment_thumb"><img src="../images/temp/thumb01.jpg" alt="이미지1"></div>
+                    <div class="comment_button"><button type="button"><span class="blind">댓글관리</span></button></div>
+                    <div class="comment_item__area">
+                        <span class="nick_name">abcdefg12345</span>
+                        <span class="date">5월27일</span>
+                        <div class="comment_text">시원한 색감의 코디 넘 좋아요.<br>여름 코디로 딱이네요!</div>
+                    </div>
+                </div>
+
+                <div class="comment_item">
+                    <div class="comment_thumb"><img src="../images/temp/thumb02.jpg" alt="이미지1"></div>
+                    <div class="comment_button"><button type="button"><span class="blind">댓글관리</span></button></div>
+                    <div class="comment_item__area">
+                        <span class="nick_name">abcdefg12345</span>
+                        <span class="date">5월27일</span>
+                        <div class="comment_text">시원한 색감의 코디 넘 좋아요.<br>여름 코디로 딱이네요!</div>
+                    </div>
+                </div>
+
+                <div class="comment_item">
+                    <div class="comment_thumb"><img src="../images/temp/thumb02.jpg" alt="이미지1"></div>
+                    <div class="comment_button"><button type="button"><span class="blind">댓글관리</span></button></div>
+                    <div class="comment_item__area">
+                        <span class="nick_name">abcdefg12345</span>
+                        <span class="date">5월27일</span>
+                        <div class="comment_text">시원한 색감의 코디 넘 좋아요.<br>여름 코디로 딱이네요!</div>
+                    </div>
+                </div>
+
+                <div class="comment_item">
+                    <div class="comment_thumb"><img src="../images/temp/thumb02.jpg" alt="이미지1"></div>
+                    <div class="comment_button"><button type="button"><span class="blind">댓글관리</span></button></div>
+                    <div class="comment_item__area">
+                        <span class="nick_name">abcdefg12345</span>
+                        <span class="date">5월27일</span>
+                        <div class="comment_text">test test</div>
+                    </div>
+                </div>
             </div>
             <div class="comment_regist">
                 <div class="comment_thumb"><img src="../images/temp/thumb06.jpg" alt="이미지1"></div>
@@ -37,27 +76,26 @@
 
 <script src="../js/lib/jquery-3.7.0.min.js"></script>
 <script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/lib/autosize.js"></script>
 <script src="../js/common.js"></script>
 <script>
 $(function() {
-    $(".comment_box textarea").on('keydown keyup', function () {
-        $(this).height(1).height( $(this).prop('scrollHeight')+12 );
-        /*if($(this).height() >= 122) {
-            $(this).height(122);
+    $('textarea').each(function(){
+        autosize(this);
+    }).on('autosize:resized', function(){
+        console.log($(this).height());
+        if( $(this).height() >= 22 && $(this).height() < 44) {
+            $(this).css({"bottom": "0"})
+        } else if($(this).height() >= 44 && $(this).height() < 66) {
+            $(this).css({"bottom": "8px"});
+            $('.comment_regist').css({"height": "92px"});
+        } else if($(this).height() >= 66 && $(this).height() < 88) {
+            $(this).css({"bottom": "8px"});
+            $('.comment_regist').css({"height": "118px"});
+        } else if($(this).height() >= 88) {
+            $(this).css({"bottom": "11px","height":"88px"})
+            $('.comment_regist').css({"height": "118px"});
         }
-        if($(this).height() >= 56 && $(this).height() <= 77 ) {
-            $('.comment_box').css({
-                top: 16 + "px"
-            });
-        } else if($(this).height() >= 78) {
-            $('.comment_box').css({
-                top: 0 + "px"
-            });
-        } else {
-            $('.comment_box').css({
-                top: 26 + "px"
-            });
-        }*/
     });
 });
 </script>

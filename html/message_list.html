@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>메세지</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+        <h1 class="title">메세지</h1>
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="sub_content">
+            <div class="message_wrap">
+                <div class="message_item">
+                    <a href="#">
+                        <div class="thumb"><img src="../images/temp/thumb16.jpg" alt="이미지"></div>
+                        <div class="message_content">
+                            <div class="message_user">
+                                <span class="nick_name">사랑하는내사람</span>
+                                <span class="time">오후 07:40</span>
+                            </div>
+                            <div class="message_box">
+                                <div class="message">제발 메세지좀 제발 메세지좀 제발 메세지좀 확인해주세요~~~</div>
+                                <div class="count">300+</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="message_item">
+                    <a href="#">
+                        <div class="thumb"></div><!-- 이미지가 없으면 기본 background로 생성 -->
+                        <div class="message_content">
+                            <div class="message_user">
+                                <span class="nick_name">팬더</span>
+                                <span class="time">오후 07:40</span>
+                            </div>
+                            <div class="message_box">
+                                <div class="message">좋아요</div>
+                                <div class="count">3</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="message_item">
+                    <a href="#">
+                        <div class="thumb"><img src="../images/temp/thumb17.jpg" alt=""></div>
+                        <div class="message_content">
+                            <div class="message_user">
+                                <span class="nick_name">팬더</span>
+                                <span class="time">오후 07:40</span>
+                            </div>
+                            <div class="message_box">
+                                <div class="message">좋아요</div>
+                                <div class="count">3</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="message_item secession"><!-- 탈퇴회원 class="secession"가 생성되어야 한다 -->
+                    <a href="#">
+                        <div class="thumb"><img src="../images/temp/thumb10.jpg" alt=""></div>
+                        <div class="message_content">
+                            <div class="message_user">
+                                <span class="nick_name">이쁘다(탈퇴)</span>
+                                <span class="time">오후 07:40</span>
+                            </div>
+                            <div class="message_box">
+                                <div class="message">좋아요</div>
+                                <!--<div class="count">3</div>-->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="message_item">
+                    <a href="#">
+                        <div class="thumb"><img src="../images/temp/thumb15.jpg" alt=""></div>
+                        <div class="message_content">
+                            <div class="message_user">
+                                <span class="nick_name">울트라맨</span>
+                                <span class="time">오후 07:40</span>
+                            </div>
+                            <div class="message_box">
+                                <div class="message">좋아요좋아요좋아요좋아요좋아요좋아요좋아요</div>
+                                <div class="count">99</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/lib/autosize.js"></script>
+<script src="../js/common.js"></script>
+<script>
+$(function() {
+    $('textarea').each(function(){
+        autosize(this);
+    }).on('autosize:resized', function(){
+        console.log($(this).height());
+        if( $(this).height() >= 22 && $(this).height() < 44) {
+            $(this).css({"bottom": "0"})
+        } else if($(this).height() >= 44 && $(this).height() < 66) {
+            $(this).css({"bottom": "8px"});
+            $('.comment_regist').css({"height": "92px"});
+        } else if($(this).height() >= 66 && $(this).height() < 88) {
+            $(this).css({"bottom": "8px"});
+            $('.comment_regist').css({"height": "118px"});
+        } else if($(this).height() >= 88) {
+            $(this).css({"bottom": "11px","height":"88px"})
+            $('.comment_regist').css({"height": "118px"});
+        }
+    });
+});
+</script>
+</body>
+</html>

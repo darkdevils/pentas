@@ -211,6 +211,35 @@
         background-color: #DBDBDB;
         border-color: #DBDBDB;
       }
+      &.gray {
+        background-color: #8D9695;
+        border-color: #8D9695;
+        color: #fff;
+      }
+    }
+    &.btn--kakao {
+      height: 48px;
+      background-color: #F6E24B;
+      border-color: #F6E24B;
+      span {
+        position: relative;
+        font-size: 16px;
+        &:after {
+          content: "";
+          position: absolute;
+          left: -26px;
+          top: 3px;
+          width: 20px;
+          height: 20px;
+          @include imageUrl(icon_kakaotalk,svg);
+        }
+      }
+      + .btn--kakao {
+        margin-top: 10px;
+      }
+      &:nth-child(2) span:after {
+        @include imageUrl(icon_kakaotalk2,svg);
+      }
     }
   }
 

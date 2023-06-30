@@ -64,9 +64,11 @@
 </div>
 
 <!-- 로그아웃 레이어팝업 -->
-<div class="layer_popup_wrap alert_layer" id="layer1">
-    <div class="layer_popup_alert">
-        <p class="text">정말 로그아웃 하시겠습니까?</p>
+<div class="layer_wrap" id="layer1">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <p class="text">정말 로그아웃 하시겠습니까?</p>
+        </div>
         <div class="layer_popup_button btn_col2">
             <button type="button" class="btn all_cancel" onclick="common.alertClose('layer1')"><span>취소</span></button>
             <button type="button" class="btn" onclick="common.alertClose('layer1')"><span>확인</span></button>

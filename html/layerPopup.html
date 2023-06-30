@@ -18,8 +18,11 @@
     <button type="button" class="layer_open" aria-controls="slide_layer03">내피스관리 레이어</button>
     <button type="button" class="layer_open" aria-controls="slide_layer04">내용추가 레이어</button>
     <button type="button" class="layer_open" aria-controls="slide_layer05">주제어 선택1</button>
-</div>
 
+    <button type="button" onclick="common.alertLayer('' +'member01')">회원가입_레이어팝업1</button>
+    <button type="button" onclick="common.alertLayer('' +'member02')">회원가입_레이어팝업2</button>
+    <button type="button" onclick="common.alertLayer('' +'member03')">회원가입_레이어팝업3</button>
+</div>
 
 <!-- 공기알 추가 레이어 팝업 -->
 <div class="layer_popup_wrap slide_layer" id="slide_layer01">
@@ -112,11 +115,10 @@
                 <div class="radio_item"><input type="radio" name="option" id="green" onclick="showColor('color5')"><label for="green"><span class="blind">녹색</span></label></div>
             </div>
         </form>
-        <div class="input_wrap gongi_name">
+        <div class="input_wrap gonggi_name">
             <div class="input_inner">
                 <input type="text" name="" id="" maxlength="5" placeholder="공기알 이름을 입력해주세요">
             </div>
-
             <div class="font_size">
                 <span class="current">0</span>/<span class="total">5</span>
             </div>
@@ -343,6 +345,45 @@
 </div>
 <!-- //내용추가 파일 클릭 했을 경우 나오는 레이어 팝업 -->
 
+<!-- 회원가입 레이어팝업 -->
+<div class="layer_wrap" id="member01">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <p class="text">이미 사용중인 이메일입니다.</p>
+        </div>
+        <div class="btn_wrap">
+            <button type="button" class="btn btn--big" onclick="common.alertClose(this)"><span>앱종료</span></button>
+        </div>
+    </div>
+</div>
+<!-- //회원가입 레이어팝업 -->
+
+<!-- 회원가입 레이어팝업2 -->
+<div class="layer_wrap" id="member02">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <p class="text">등록하신 이메일로<br>인증번호를 전송하였습니다.</p>
+        </div>
+        <div class="btn_wrap">
+            <button type="button" class="btn btn--big" onclick="common.alertClose(this)"><span>앱종료</span></button>
+        </div>
+    </div>
+</div>
+<!-- //회원가입 레이어팝업2 -->
+
+<!-- 회원가입 레이어팝업3 -->
+<div class="layer_wrap" id="member03">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <p class="text">회원가입을 그만 하시겠어요?</p>
+        </div>
+        <div class="btn_wrap col2">
+            <button type="button" class="btn btn--big gray" onclick="common.alertClose(this)"><span>그만하기</span></button>
+            <button type="button" class="btn btn--big" onclick="common.alertClose(this)"><span>계속 가입</span></button>
+        </div>
+    </div>
+</div>
+<!-- //회원가입 레이어팝업3 -->
 
 <script src="../js/lib/jquery-3.7.0.min.js"></script>
 <script src="../js/lib/swiper-bundle.min.js"></script>

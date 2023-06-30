@@ -7,6 +7,7 @@ const common = {
         this.slideLayer.slideType();
         this.inputFocus();
         this.inputClear();
+        //this.alertLayer()
         //this.slideLayer.layerCover();
        // this.fixedHeader();
         //this.dropdown();
@@ -50,7 +51,7 @@ const common = {
         });
     },
     inputClear: function() {
-        const $ipt = $('.input_inner input[type="text"]');
+        const $ipt = $('.input_inner input');
         const $pw = $('.input_inner input[type="password"]');
         const $clearInt = $('.btn_delete');
 
@@ -202,25 +203,32 @@ const common = {
         },
     },
     alertLayer: function(el) {
-        const layerId = $("#" + el );
-        $('body').append('<div class="dim"></div>');
-        layerId.show();
-    },
-    alertClose: function(el) {
-        const layerId = $("#" + el );
-        layerId.hide();
-        $('.dim').fadeOut().queue(function(){
-            $('.dim').remove();
+        const layerId2 = $("#" + el );
+        //$('body').append('<div class="dim"></div>');
+        layerId2.show();
+        layerId2.find('.layer_alert').css({
+           "margin-top": -(layerId2.find('.layer_alert').outerHeight() / 2)
         });
+    },
+    alertClose: function(target) {
+        let h = target.closest('.layer_alert').offsetHeight / 2;
+        target.closest('.layer_wrap').style.display = "none";
+        target.closest('.layer_wrap').style.height = `-${h}`;
     }
 }
-
 
 $(function(){
     common.init();
     $('.slide_layer').each(function(){
         h = $(this).outerHeight();
         $(this).css({bottom: -h});
+    });
+    $('.layer_alert').each(function(){
+        h = $(this).outerHeight();
+        $(this).css({"margin-top": -(h / 2)});
+    });
+    $('.tooltip_close').on('click',function(){
+        $(this).parent().fadeOut();
     });
 });
 
