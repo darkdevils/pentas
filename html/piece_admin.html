@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>공기알 &amp; 피스관리</title>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+        <h1 class="title">공기알 &amp; 피스관리</h1>
+        <div class="right_area">
+            <button type="button" class="btn_home"><span class="blind">홈</span></button>
+            <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content" class="sub_content">
+            <div id="sort" class="piece_admin">
+                <div id="test1" class="list_wrap">
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="show">
+                                <div>공기알1</div>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="show">
+                                <span>공기알2</span>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="show">
+                                <span>공기알3</span>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="show">
+                                <span>공기알4</span>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="show">
+                                <span>공기알5</span>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/lib/sortable.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    // 공기알,피스관리 이동하기 스크립트
+    //const test1 = document.getElementById('test1'),
+    document.querySelector('.sub_content').style.overflow = "hidden";
+    new Sortable(test1, {
+        handle: '.handle', // handle's class
+        animation: 150,
+        ghostClass: 'blue-background-class'
+    });
+
+    //let touchArea = document.querySelectorAll(".list_wrap__item");
+    let touchArea = $(".list_wrap__item");
+
+    let mouseX,
+        initialX = 0;
+    let mouseY,
+        initialY = 0;
+    let isSwiped;
+
+    let events = {
+        mouse: {
+            down: "mousedown",
+            move: "mousemove",
+            up: "mouseup",
+        },
+        touch: {
+            down: "touchstart",
+            move: "touchmove",
+            up: "touchend",
+        },
+    }
+
+    let deviceType = "";
+
+    const isTouchDevice = () => {
+        try {
+            document.createEvent("TouchEvent");
+            deviceType = "touch";
+            return true;
+        } catch (e) {
+            deviceType = "mouse";
+            return false;
+        }
+    }
+
+    let rectLeft = touchArea.offset().left;
+    let rectTop = touchArea.offset().top;
+
+    const getXY = (e) => {
+        mouseX = (!isTouchDevice() ? e.pageX : e.touches[0].pageX) - rectLeft;
+        mouseY = (!isTouchDevice() ? e.pageY : e.touches[0].pageY) - rectTop;
+    };
+
+    isTouchDevice();
+
+    touchArea.on('touchstart', function(event) {
+        isSwiped = true;
+        getXY(event);
+        initialX = mouseX;
+        initialY = mouseY;
+    });
+
+    touchArea.on("touchmove",function(event){
+
+        const _this = $(this);
+        if(!isTouchDevice()) {
+            event.preventDefault();
+        }
+        if(isSwiped) {
+            getXY(event);
+            let diffX = mouseX - initialX;
+            let diffY = mouseY - initialY;
+            if( diffX > 0 ) {
+                _this.find('.item_cotent').removeClass('left');
+            } else {
+                console.log(_this);
+                _this.find('.item_cotent').addClass('left');
+                _this.addClass('active').siblings().removeClass('active');
+            }
+        }
+    });
+
+    touchArea.on("touchend",function(event){
+        isSwiped = false;
+    })
+
+    touchArea.on("mouseleave", () => {
+        isSwiped = false;
+    });
+
+    // touchArea.forEach(el => {
+    //     const _this = el;
+    //
+    //     let mouseX,
+    //         initialX = 0;
+    //     let mouseY,
+    //         initialY = 0;
+    //     let isSwiped;
+    //
+    //     let events = {
+    //         mouse: {
+    //             down: "mousedown",
+    //             move: "mousemove",
+    //             up: "mouseup",
+    //         },
+    //         touch: {
+    //             down: "touchstart",
+    //             move: "touchmove",
+    //             up: "touchend",
+    //         },
+    //     }
+    //
+    //     let deviceType = "";
+    //
+    //     const isTouchDevice = () => {
+    //         try {
+    //             document.createEvent("TouchEvent");
+    //             deviceType = "touch";
+    //             return true;
+    //         } catch (e) {
+    //             deviceType = "mouse";
+    //             return false;
+    //         }
+    //     }
+    //
+    //     let rectLeft = el.getBoundingClientRect().left;
+    //     let rectTop = el.getBoundingClientRect().top;
+    //
+    //     const getXY = (e) => {
+    //         mouseX = (!isTouchDevice() ? e.pageX : e.touches[0].pageX) - rectLeft;
+    //         mouseY = (!isTouchDevice() ? e.pageY : e.touches[0].pageY) - rectTop;
+    //     };
+    //
+    //     isTouchDevice();
+    //
+    //
+    //     el.addEventListener(events[deviceType].down,(event) => {
+    //         isSwiped = true;
+    //         getXY(event);
+    //         initialX = mouseX;
+    //         initialY = mouseY;
+    //     });
+    //
+    //     el.addEventListener(events[deviceType].move,(event) => {
+    //         if(!isTouchDevice()) {
+    //             event.preventDefault();
+    //         }
+    //         if(isSwiped) {
+    //             getXY(event);
+    //             let diffX = mouseX - initialX;
+    //             let diffY = mouseY - initialY;
+    //             if(Math.abs(diffY) > Math.abs(diffX)) {
+    //                 //console.log(diffY > 0 ? "Down" : "Up");
+    //             } else {
+    //                 if( diffX > 0 ) {
+    //                     event.target.parentElement.classList.remove('left');
+    //                 } else {
+    //                     event.target.parentElement.classList.add('left');
+    //                     document.querySelectorAll('.list_wrap__item').forEach(function(e){
+    //                         e.classList.remove('active');
+    //                         event.target.closest('.list_wrap__item').classList.add('active');
+    //                     })
+    //                 }
+    //
+    //             }
+    //         }
+    //     });
+    //
+    //     el.addEventListener(events[deviceType].up,() => {
+    //         isSwiped = false;
+    //     });
+    //
+    //     el.addEventListener("mouseleave", () => {
+    //         isSwiped = false;
+    //     });
+    // });
+
+    window.onload = () => {
+        isSwiped = false;
+    };
+
+    $('.btn_del').on('click',function(){
+        $(this).closest('.list_wrap__item').remove();
+    });
+</script>
+</body>
+</html>
