@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>회원탈퇴</title>
+</head>
+<body>
+<div class="full_popup">
+    <div class="full_popup__header">
+        <h2 class="title">회원탈퇴</h2>
+        <button type="button" class="popup_close"><span class="blind">팝업닫기</span></button>
+    </div>
+    <div class="full_popup__body">
+        <div class="withdrawn_warp">
+            <p class="big_text">잠깐! 공기를 탈퇴하기 전에 아래 정보를 꼭 확인해주세요 😥</p>
+            <ul>
+                <li>계정 정보는 모두 폐기돼요.</li>
+                <li>공기/피스 모든 데이터를 다시 볼 수 없어요.</li>
+            </ul>
+            <p class="big_text">왜 떠나시는지 이유가 있을까요?<br>더 나은 서비스를 위해 노력하겠습니다! (복수선택이 가능해요)</p>
+            <div class="checkbox_list">
+                <div class="checks">
+                    <input type="checkbox" name="" id="ck1"><label for="ck1">서비스 장애가 너무 잦아요</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" name="" id="ck2"><label for="ck2">다른 유사 서비스 사용하려고요</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" name="" id="ck3"><label for="ck3">이용 빈도가 낮고 개인정보 유출이 걱정돼요</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" name="" id="ck4"><label for="ck4">탈퇴 후 재가입하려고요</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" name="" id="ck5"><label for="ck5">기타(직접입력)</label>
+                    <div class="text_area">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="이유를 입력해주세요.&#13;&#10;(최대 100자까지 입력 가능합니다.)"></textarea>
+                    </div>
+                    <div class="text_count">0/100자</div>
+                </div>
+            </div>
+            <p class="big_text">마지막으로 회원 탈퇴를 위해 회원님의 비밀번호를 입력해 주세요.</p>
+            <div class="input_wrap input_type2">
+                <div class="input_inner">
+                    <input type="password" name="" id="" placeholder="비밀번호를 입력해 주세요.">
+                    <button type="button" class="btn_show"><span class="blind">비밀번호 숨기기</span></button>
+                </div>
+                <button type="button" class="btn_send">확인</button>
+            </div>
+        </div>
+        <div class="btn_wrap fixed">
+            <button type="button" class="btn btn--big" onclick="common.alertLayer('' +'member04')"><span>탈퇴하기</span></button>
+            <button type="button" class="btn btn--big" disabled><span>탈퇴하기</span></button>
+        </div>
+    </div>
+</div>
+
+<!-- 회원가입 완료 레이어팝업 -->
+<div class="layer_wrap" id="member04">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <h2 class="title">회원가입 완료</h2>
+            <p class="text">이메일 인증 및 회원가입이 완료되었습니다.<br>인증된 이메일로 로그인하세요.</p>
+        </div>
+        <div class="btn_wrap col2">
+            <button type="button" class="btn btn--big gray" onclick="common.alertClose(this)"><span>더 써볼래요</span></button>
+            <button type="button" class="btn btn--big" onclick="common.alertClose(this)"><span>떠날래요</span></button>
+        </div>
+    </div>
+</div>
+<!-- //회원가입 완료 레이어팝업 -->
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    $('.btn_show').on('click',function() {
+        $(this).toggleClass('show');
+        $(this).prev('input').attr('type', function(index, attr){
+            return attr == 'text' ? "password" : "text";
+        });
+    })
+</script>
+</body>
+</html>

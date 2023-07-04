@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>공기알 &amp; 피스관리</title>
+    <title>공기알관리</title>
 </head>
 <body>
 <div id="wrap">
     <div id="header">
         <button type="button" class="btn_prev"><span class="blind">이전</span></button>
-        <h1 class="title">공기알 &amp; 피스관리</h1>
+        <h1 class="title">공기알관리</h1>
         <div class="right_area">
             <button type="button" class="btn_home"><span class="blind">홈</span></button>
             <button type="button" class="btn_total_menu"><span class="blind">전체메뉴</span></button>
@@ -19,152 +19,88 @@
     </div>
     <div id="container">
         <div id="content" class="sub_content">
-            <div class="piece_admin">
-                <div class="tab_wrap">
-                    <ul id="tab">
-                        <li><a href="#none">공기알</a></li>
-                        <li><a href="#none">피스</a></li>
-                    </ul>
-                    <div id="tab__con">
-                        <div id="test1" class="list_wrap">
-                            <!-- 공기알 관리 -->
-                            <div class="list_wrap__item">
-                                <div class="item_cotent">
-                                    <div class="block">
-                                        <div class="name_area">
-                                            <a href="#" class="layer_open" aria-controls="slide_layer01">
-                                                <span class="icon"><img src="../images/orange_gonggi01.svg" alt=""></span>
-                                                <span class="name">공기알1 <em>2</em></span>
-                                            </a>
-                                        </div>
-                                        <button type="button" class="handle"><span class="blind">이동</span></button>
-                                    </div>
-                                    <button type="button" class="btn_del">삭제</button>
+            <div id="sort" class="piece_admin">
+                <div id="test1" class="list_wrap">
+                    <!-- 공기알 관리 -->
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="block">
+                                <div class="name_area">
+                                    <a href="#" class="layer_open" aria-controls="slide_layer01">
+                                        <span class="icon"><img src="../images/orange_gonggi01.svg" alt=""></span>
+                                        <span class="name">공기알1 <em>2</em></span>
+                                    </a>
                                 </div>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
                             </div>
-                            <!-- //공기알 관리 -->
-                            <div class="list_wrap__item">
-                                <div class="item_cotent">
-                                    <div class="block">
-                                        <div class="name_area">
-                                            <a href="#" class="layer_open" aria-controls="slide_layer01">
-                                                <span class="icon"><img src="../images/blue_gonggi02.svg" alt=""></span>
-                                                <span class="name">공기알2 <em>2</em></span>
-                                            </a>
-                                        </div>
-                                        <button type="button" class="handle"><span class="blind">이동</span></button>
-                                    </div>
-                                    <button type="button" class="btn_del">삭제</button>
-                                </div>
-                            </div>
-                            <div class="list_wrap__item">
-                                <div class="item_cotent">
-                                    <div class="block">
-                                        <div class="name_area">
-                                            <a href="#" class="layer_open" aria-controls="slide_layer01">
-                                                <span class="icon"><img src="../images/yellow_gonggi03.svg" alt=""></span>
-                                                <span class="name">공기알3 <em>2</em></span>
-                                            </a>
-                                        </div>
-                                        <button type="button" class="handle"><span class="blind">이동</span></button>
-                                    </div>
-                                    <button type="button" class="btn_del">삭제</button>
-                                </div>
-                            </div>
-                            <div class="list_wrap__item">
-                                <div class="item_cotent">
-                                    <div class="block">
-                                        <div class="name_area">
-                                            <a href="#" class="layer_open" aria-controls="slide_layer01">
-                                                <span class="icon"><img src="../images/pink_gonggi04.svg" alt=""></span>
-                                                <span class="name">공기알4 <em>2</em></span>
-                                            </a>
-                                        </div>
-                                        <button type="button" class="handle"><span class="blind">이동</span></button>
-                                    </div>
-                                    <button type="button" class="btn_del">삭제</button>
-                                </div>
-                            </div>
-                            <div class="list_wrap__item">
-                                <div class="item_cotent">
-                                    <div class="block">
-                                        <div class="name_area">
-                                            <a href="#" class="layer_open" aria-controls="slide_layer01">
-                                                <span class="icon"><img src="../images/green_gonggi01.svg" alt=""></span>
-                                                <span class="name">공기알5 <em>99</em></span>
-                                            </a>
-                                        </div>
-                                        <button type="button" class="handle"><span class="blind">이동</span></button>
-                                    </div>
-                                    <button type="button" class="btn_del">삭제</button>
-                                </div>
-                            </div>
-
-                            <ul class="tip_list">
-                                <li>공기알 이름을 터치하면 이름을 수정할 수 있어요.</li>
-                                <li>아이콘(<i class="icon"></i>)을 눌러 순서를 바꿀 수 있어요.</li>
-                                <li>왼쪽으로 밀면 공기알을 삭제할 수 있어요.</li>
-                            </ul>
+                            <button type="button" class="btn_del">삭제</button>
                         </div>
-                        <div>
-                            <div class="item_area">
-                                <div class="select_wrap">
-                                    <div class="selected_value">문의 유형 선택해 주세요.</div>
-                                    <div class="option_wrap">
-                                        <ul class="option_list">
-                                            <li class="option">test1</li>
-                                            <li class="option">test2</li>
-                                            <li class="option">test3</li>
-                                            <li class="option">test4</li>
-                                            <li class="option">test5</li>
-                                            <li class="option">test6</li>
-                                            <li class="option">test7</li>
-                                        </ul>
-                                    </div>
+                    </div>
+                    <!-- //공기알 관리 -->
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="block">
+                                <div class="name_area">
+                                    <a href="#" class="layer_open" aria-controls="slide_layer01">
+                                        <span class="icon"><img src="../images/blue_gonggi02.svg" alt=""></span>
+                                        <span class="name">공기알2 <em>2</em></span>
+                                    </a>
                                 </div>
-                                <div class="error_message">문의 유형을 선택해 주세요.</div>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
                             </div>
-                            <div class="list_wrap">
-                                <!-- 피스 관리 -->
-                                <div class="list_wrap__item">
-                                    <div class="item_cotent">
-                                        <div class="block">
-                                            <div class="name_area">
-                                                <a href="#">
-                                                    <span class="thumb"><img src="../images/temp/thumb08.jpg" alt=""></span>
-                                                    <span class="name">데일리 출근룩데일리 출근룩</span>
-                                                </a>
-                                            </div>
-                                            <button type="button" class="favorites"><span class="blind">즐겨찾기</span></button>
-                                        </div>
-                                        <button type="button" class="btn_del">삭제</button>
-                                    </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="block">
+                                <div class="name_area">
+                                    <a href="#" class="layer_open" aria-controls="slide_layer01">
+                                        <span class="icon"><img src="../images/yellow_gonggi03.svg" alt=""></span>
+                                        <span class="name">공기알3 <em>2</em></span>
+                                    </a>
                                 </div>
-                                <div class="list_wrap__item">
-                                    <div class="item_cotent">
-                                        <div class="block">
-                                            <div class="name_area">
-                                                <a href="#">
-                                                    <span class="thumb"><img src="../images/temp/thumb10.jpg" alt=""></span>
-                                                    <span class="name">데일리 출근룩</span>
-                                                </a>
-                                            </div>
-                                            <button type="button" class="favorites"><span class="blind">즐겨찾기</span></button>
-                                        </div>
-                                        <button type="button" class="btn_del">삭제</button>
-                                    </div>
-                                </div>
-                                <!-- //피스 관리 -->
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
                             </div>
-                            <ul class="tip_list">
-                                <li>피스 이름을 터치하면 이름을 수정할 수 있어요.</li>
-                                <li>아이콘(<i class="icon"></i>)을 눌러 순서를 바꿀 수 있어요.</li>
-                                <li>왼쪽으로 밀면 피스를 삭제할 수 있어요.</li>
-                            </ul>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="block">
+                                <div class="name_area">
+                                    <a href="#" class="layer_open" aria-controls="slide_layer01">
+                                        <span class="icon"><img src="../images/pink_gonggi04.svg" alt=""></span>
+                                        <span class="name">공기알4 <em>2</em></span>
+                                    </a>
+                                </div>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                    <div class="list_wrap__item">
+                        <div class="item_cotent">
+                            <div class="block">
+                                <div class="name_area">
+                                    <a href="#" class="layer_open" aria-controls="slide_layer01">
+                                        <span class="icon"><img src="../images/green_gonggi01.svg" alt=""></span>
+                                        <span class="name">공기알5 <em>99</em></span>
+                                    </a>
+                                </div>
+                                <button type="button" class="handle"><span class="blind">이동</span></button>
+                            </div>
+                            <button type="button" class="btn_del">삭제</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <ul class="tip_list">
+                <li>공기알 이름을 터치하면 이름을 수정할 수 있어요.</li>
+                <li>아이콘(<i class="icon"></i>)을 눌러 순서를 바꿀 수 있어요.</li>
+                <li>왼쪽으로 밀면 공기알을 삭제할 수 있어요.</li>
+            </ul>
         </div>
     </div>
 </div>
@@ -280,8 +216,6 @@
 <script src="../js/lib/sortable.min.js"></script>
 <script src="../js/common.js"></script>
 <script>
-    common.tabType("#tab",0);
-
     // 공기알,피스관리 이동하기 스크립트
     document.querySelector('.sub_content').style.overflow = "hidden";
     new Sortable(test1, {
@@ -290,31 +224,8 @@
         //ghostClass: 'changeColor'
     });
 
-    $(function(){
-        $('.selected_value').on('click',function(e){
-            $(this).parent().toggleClass('active');
-            $(this).closest('.item_area').siblings().find('.select_wrap').removeClass('active');
-        });
-
-        $(".option_list li").on('click',function() {
-            let text = $(this).html();
-            $(this).addClass('on').siblings().removeClass('on');
-            const selectValue = $(this).closest('.select_wrap').find('.selected_value');
-            selectValue.text(text);
-            $(this).closest('.select_wrap').addClass('on').removeClass('active');
-        });
-
-        $(document).on('click', function(e) {
-            const $clicked = $(e.target);
-            if (!$clicked.parents().hasClass('select_wrap')){
-                $('.select_wrap').removeClass('active');
-            }
-        });
-    });
-
-
     //let touchArea = document.querySelectorAll(".list_wrap__item");
-    let touchArea = $(".list_wrap .list_wrap__item");
+    let touchArea = $(".list_wrap__item");
 
     let mouseX,
         initialX = 0;
@@ -401,10 +312,6 @@
         $(this).closest('.list_wrap__item').remove();
     });
 
-    // 즐겨찾기
-    $('.favorites').on('click',function(){
-        $(this).toggleClass('on');
-    })
 </script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>이용가이드</title>
+</head>
+<body>
+<div class="user_guide user_guide__01">
+    <div class="user_guide_header">
+        <h1 class="title">공기 이용 가이드</h1>
+        <button type="button"><span class="blind">닫기</span></button>
+    </div>
+    <div class="user_guide_content">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper01.png" alt="공기알 추가">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper02.png" alt="피스 추가">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper03.png" alt="피스 즐겨찾기, 좋아요">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper04.png" alt="피스 공개, 구독 자유롭게">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper05.png" alt="내용 추가">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper06.png" alt="내용 추가할 땐 한 개씩">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../images/guide_swiper07.png" alt="댓글 기능">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="text_box">
+            <strong>공기알 추가</strong>
+            <p>로그인했으면 맨 처음 공기알을 추가해야 돼.<br>그래야 공기알 안에 피스를 추가할 수 있어.<br>공기알 추가 방법은 맨 위에+버튼을 누르면 돼!</p>
+            <button type="button">오호... 그런거구나! 그 다음은?</button>
+        </div>
+        <div class="text_box">
+            <strong>피스 추가</strong>
+            <p>공기알을 추가했다면 이제 피스를 추가해야겠지?<br>그래야 피스 안에 내용을 담을 수 있거든~<br>공기알은 최대 5개, 피스는 20개까지 생성 가능해.</p>
+            <button type="button">ㅇㅋ 꼭 기억할께!</button>
+        </div>
+        <div class="text_box">
+            <strong>피스 즐겨찾기, 좋아요</strong>
+            <p>피스 상세화면에서 제어할 수 있는 두 개!<br>즐겨찾기 ☆ 버튼은 정렬 순서를 맨 앞으로 좋아요 ♡ 버튼은 공감... 잊지 마!</p>
+            <button type="button">오키오키 알겠어</button>
+        </div>
+        <div class="text_box">
+            <strong>피스 공개, 구독 자유롭게</strong>
+            <p>내 피스는 비공개 또는 공개할 수 있고<br>타인 피스는 구독하거나 구독 해제할 수 있어!<br>이건 네 자유야~~~~</p>
+            <button type="button">오케이 다음!</button>
+        </div>
+        <div class="text_box">
+            <strong>내용 추가</strong>
+            <p>피스 추가까지 했다면 반은 성공!<br>이제부터 본격적인 내용을 추가할 수 있거덩~<br>맨 하단에 내용 추가 버튼을 누르면 돼!</p>
+            <button type="button">그럼 내용은 어떻게 추가해?</button>
+        </div>
+        <div class="text_box">
+            <strong>내용 추가할 땐 한 개씩</strong>
+            <p>내용을 추가할 때는 한 개씩만 가능해.<br>텍스트, 이미지, 파일, URL 중<br>하나를 선택해서 내용을 업로드 하면 돼!</p>
+            <button type="button">아 그렇구나~ 알겠어!</button>
+        </div>
+        <div class="text_box">
+            <strong>댓글 기능</strong>
+            <p>내용이 유익하거나 좋았다면 댓글 달아줘.<br>욕설과 비방은 신고할 거야<br>그러니까 네 얼굴처럼 말은 예쁘게 써줘 :)</p>
+            <button type="button">데헷 ;) 걱정마 이쁘게 댓글 남길게</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/lib/jquery-3.7.0.min.js"></script>
+<script src="../js/lib/swiper-bundle.min.js"></script>
+<script src="../js/common.js"></script>
+
+<script>
+    var swiper = new Swiper(".swiper", {
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
+</body>
+</html>

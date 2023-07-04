@@ -138,7 +138,7 @@ const common = {
                 $('body').append('<div class="dim"></div>');
                 layerPopup.animate({
                     bottom: 0
-                });
+                },200);
 
                 $('.dim').on("click",  layerClose);
 

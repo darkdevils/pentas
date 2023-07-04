@@ -22,6 +22,7 @@
     <button type="button" onclick="common.alertLayer('' +'member01')">회원가입_레이어팝업1</button>
     <button type="button" onclick="common.alertLayer('' +'member02')">회원가입_레이어팝업2</button>
     <button type="button" onclick="common.alertLayer('' +'member03')">회원가입_레이어팝업3</button>
+    <button type="button" onclick="common.alertLayer('' +'member04')">회원가입완료 레이어팝업</button>
 </div>
 
 <!-- 공기알 추가 레이어 팝업 -->
@@ -384,6 +385,20 @@
     </div>
 </div>
 <!-- //회원가입 레이어팝업3 -->
+
+<!-- 회원가입 완료 레이어팝업 -->
+<div class="layer_wrap" id="member04">
+    <div class="layer_alert">
+        <div class="layer_alert__content">
+            <h2 class="title">회원가입 완료</h2>
+            <p class="text">이메일 인증 및 회원가입이 완료되었습니다.<br>인증된 이메일로 로그인하세요.</p>
+        </div>
+        <div class="btn_wrap">
+            <a href="login.html" class="btn btn--big"><span>로그인페이지로 이동</span></a>
+        </div>
+    </div>
+</div>
+<!-- //회원가입 완료 레이어팝업 -->
 
 <script src="../js/lib/jquery-3.7.0.min.js"></script>
 <script src="../js/lib/swiper-bundle.min.js"></script>
